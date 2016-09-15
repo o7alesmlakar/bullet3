@@ -239,13 +239,10 @@ inline int	btGetVersion()
 #else
 
 		#define SIMD_FORCE_INLINE inline
-		///@todo: check out alignment methods for other platforms/compilers
-		///#define ATTRIBUTE_ALIGNED16(a) a __attribute__ ((aligned (16)))
-		///#define ATTRIBUTE_ALIGNED64(a) a __attribute__ ((aligned (64)))
-		///#define ATTRIBUTE_ALIGNED128(a) a __attribute__ ((aligned (128)))
-		#define ATTRIBUTE_ALIGNED16(a) a
-		#define ATTRIBUTE_ALIGNED64(a) a
-		#define ATTRIBUTE_ALIGNED128(a) a
+        #define ATTRIBUTE_ALIGNED16(a) a __attribute__((aligned(16)))
+        #define ATTRIBUTE_ALIGNED64(a) a __attribute__((aligned(64)))
+        #define ATTRIBUTE_ALIGNED128(a) a __attribute__((aligned(128)))
+
 		#ifndef assert
 		#include <assert.h>
 		#endif
